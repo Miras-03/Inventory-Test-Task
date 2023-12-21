@@ -19,10 +19,10 @@ namespace Inventory
             for (int i = 0; i < inventory.items.Count; i++)
             {
                 int concreteItem = i;
-                ItemSO itemData = inventory.items[concreteItem].itemData;
+                ItemSO itemData = inventory.items[concreteItem];
                 InventoryItem item = itemData.itemPrefab;
                 Instantiate(item, item.transform.position, Quaternion.identity, parent);
-                item.SetItem(itemData, inventory.items[concreteItem].quantity);
+                item.SetItem(itemData, itemData.itemQuantity);
                 inventoryItemHandler = new InventoryItemHandler(item);
                 inventoryItemHandler.SubscribeItemEvents();
             }

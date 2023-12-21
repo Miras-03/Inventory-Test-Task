@@ -23,25 +23,12 @@ namespace Inventory
         public Action<InventoryItem> OnItemRClick;
         public Action<InventoryItem> OnItemDropped;
 
-        private int id;
-
-        private void OnEnable()
-        {
-            CharacteristicsFilter.OnFilter += Filter;
-        }
-
-        private void OnDestroy()
-        {
-            CharacteristicsFilter.OnFilter -= Filter;
-        }
-
         public void SetItem(ItemSO itemData, int entitiesCount)
         {
             entity.sprite = itemData.entity;
             characteristics.sprite = itemData.characteristics;
             this.entitiesCount.text = $"x{entitiesCount}";
-            characteristicsCount.text = $"+{itemData.characteristicsCount}";
-            id = itemData.id;
+            characteristicsCount.text = $"+{itemData.characteristicsAmount}";
         }
 
         public void PoinerClick(BaseEventData eventData)
@@ -54,11 +41,5 @@ namespace Inventory
         }
 
         public void Drop() => OnItemDropped?.Invoke(this);
-
-        private void Filter(int id)
-        {
-            bool doesMath = this.id == id || id == 0 ? true : false;
-            gameObject.SetActive(doesMath);
-        }
     }
 }

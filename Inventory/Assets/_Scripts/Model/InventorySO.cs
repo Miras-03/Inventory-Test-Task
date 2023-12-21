@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,18 +6,19 @@ namespace Inventory.Model
     [CreateAssetMenu(fileName = "Inventory", menuName = "ScriptableObject/Inventory")]
     public sealed class InventorySO : ScriptableObject
     {
-        public List<Item> items;
+        public List<ItemSO> items;
 
-        public void Add(Item item) => items.Add(item);
+        public bool isEmpty => items == null;
 
-        public void Remove(Item item) => items.Remove(item);
-    }
+        public void Add(ItemSO item, int quantity)
+        {
+            for (int i = 0; i < quantity; i++)
+                items.Add(item);
+            item.itemQuantity += quantity;
+        }
 
-    [Serializable]
-    public struct Item
-    {
-        public ItemSO itemData;
-        public int quantity;
-        public bool isEmpty => itemData == null;
+        public void Remove(ItemSO item) => items.Remove(item);
+
+        public void Clear() => items.Clear();
     }
 }

@@ -10,6 +10,7 @@ namespace Inventory.Model
         public Sprite characteristics;
 
         public int id;
-        public int characteristicsCount;
+        public int itemQuantity;
+        public int characteristicsAmount;
     }
 }

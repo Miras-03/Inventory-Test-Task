@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: WeaponInventory
   m_EditorClassIdentifier: 
   items:
-  - itemData: {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
-    quantity: 3
-  - itemData: {fileID: 11400000, guid: e7bbf698965397b44aa8c2eb59edc4dc, type: 2}
-    quantity: 2
-  - itemData: {fileID: 11400000, guid: 75ecd402a19d6bc45ba3a8615eea6006, type: 2}
-    quantity: 4
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: e7bbf698965397b44aa8c2eb59edc4dc, type: 2}
+  - {fileID: 11400000, guid: 75ecd402a19d6bc45ba3a8615eea6006, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}

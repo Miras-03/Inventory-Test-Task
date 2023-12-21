@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,39 +6,41 @@ namespace Inventory
 {
     public sealed class InventorySwitcher : MonoBehaviour
     {
+        [Space(10)]
+        [SerializeField] private CloseButton closeButton;
+
+        [Space(20)]
+        [Header("UI")]
         [SerializeField] private GameObject[] inventroyPanels;
+
+        [Space(20)]
         [SerializeField] private Button[] entityButtons;
 
-        private void Start() => EnableInventory(inventroyPanels[0]);
+        private void OnEnable() => AddListeners();
 
-        private void OnEnable() => AddButtonListeners();
+        private void OnDisable() => RemoveListeners();
 
-        private void OnDisable() => RemoveButtonListeners();
-
-        private void AddButtonListeners()
+        private void AddListeners()
         {
-            entityButtons[0].onClick.AddListener(() => EnableInventory(inventroyPanels[0]));
-            entityButtons[1].onClick.AddListener(() => EnableInventory(inventroyPanels[1]));
-            entityButtons[2].onClick.AddListener(() => EnableInventory(inventroyPanels[2]));
-            entityButtons[3].onClick.AddListener(() => EnableInventory(inventroyPanels[3]));
+            for (int i = 0; i < entityButtons.Length; i++)
+            {
+                int concreteItem = i;
+                entityButtons[concreteItem].onClick.AddListener(DisableInventories);
+                entityButtons[concreteItem].onClick.AddListener(() => inventroyPanels[concreteItem].SetActive(true));
+                entityButtons[concreteItem].onClick.AddListener(() => closeButton?.gameObject.SetActive(true));
+            }
         }
 
-        private void RemoveButtonListeners()
+        private void RemoveListeners()
         {
-            foreach (var button in entityButtons) 
-                button.onClick.RemoveAllListeners();
+            foreach (var b in entityButtons)
+                b.onClick.RemoveAllListeners();
         }
 
-        private void EnableInventory(GameObject inventory)
+        private void DisableInventories()
         {
-            DisablePanels();
-            inventory.SetActive(true);
-        }
-
-        private void DisablePanels()
-        {
-            foreach (GameObject panel in inventroyPanels) 
-                panel.SetActive(false);
+            foreach (var p in inventroyPanels)
+                p.SetActive(false);
         }
     }
 }
