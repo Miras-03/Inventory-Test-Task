@@ -7,7 +7,6 @@ namespace Inventory
     {
         [SerializeField] private InventorySO inventory;
         [SerializeField] private RectTransform parent;
-        private InventoryItemHandler inventoryItemHandler;
 
         private void Start()
         {
@@ -16,15 +15,14 @@ namespace Inventory
 
         public void Spawn()
         {
-            for (int i = 0; i < inventory.items.Count; i++)
+            for (int i = 0; i < inventory.entities.Count; i++)
             {
                 int concreteItem = i;
-                ItemSO itemData = inventory.items[concreteItem];
-                InventoryItem item = itemData.itemPrefab;
+                EntitySO itemData = inventory.entities[concreteItem];
+                CharacteristicSO characteristic = itemData.characteristic;
+                InventoryItem item = itemData.entity;
                 Instantiate(item, item.transform.position, Quaternion.identity, parent);
-                item.SetItem(itemData, itemData.itemQuantity);
-                inventoryItemHandler = new InventoryItemHandler(item);
-                inventoryItemHandler.SubscribeItemEvents();
+                item.SetItem(itemData, characteristic, itemData.itemQuantity);
             }
         }
     }

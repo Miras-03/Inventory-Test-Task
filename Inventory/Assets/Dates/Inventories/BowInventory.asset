@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815d089356d9b9489f0babaca5ca620, type: 3}
   m_Name: BowInventory
   m_EditorClassIdentifier: 
-  items:
-  - {fileID: 11400000, guid: b3cee3f41b09ba34fa41672f0516a4cb, type: 2}
-  - {fileID: 11400000, guid: b3cee3f41b09ba34fa41672f0516a4cb, type: 2}
-  - {fileID: 11400000, guid: b3cee3f41b09ba34fa41672f0516a4cb, type: 2}
-  - {fileID: 11400000, guid: b3cee3f41b09ba34fa41672f0516a4cb, type: 2}
-  - {fileID: 11400000, guid: b3cee3f41b09ba34fa41672f0516a4cb, type: 2}
+  entities:
+  - {fileID: 11400000, guid: 395ff4f1dc4779c448ed7dcd2fbfb2d3, type: 2}
+  - {fileID: 11400000, guid: 395ff4f1dc4779c448ed7dcd2fbfb2d3, type: 2}
+  - {fileID: 11400000, guid: 395ff4f1dc4779c448ed7dcd2fbfb2d3, type: 2}
+  - {fileID: 11400000, guid: 395ff4f1dc4779c448ed7dcd2fbfb2d3, type: 2}
+  - {fileID: 11400000, guid: 395ff4f1dc4779c448ed7dcd2fbfb2d3, type: 2}

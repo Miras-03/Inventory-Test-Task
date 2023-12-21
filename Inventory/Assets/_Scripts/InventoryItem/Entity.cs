@@ -3,11 +3,11 @@ using Inventory.Model;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour
+public class Entity : MonoBehaviour
 {
     [Space(10)]
     [Header("ScriptableObjects")]
-    [SerializeField] private ItemSO itemData;
+    [SerializeField] private EntitySO itemData;
     [SerializeField] private InventorySO inventoryData;
 
     [Space(10)]
@@ -26,7 +26,7 @@ public class Item : MonoBehaviour
     private void Awake()
     {
         itemImage = GetComponent<Image>();
-        itemImage.sprite = itemData.entity;
+        itemImage.sprite = itemData.entityImage;
     }
 
     private void OnEnable()

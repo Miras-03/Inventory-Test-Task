@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26fd5e0c958f1c247bd77c6c9f43165b, type: 3}
-  m_Name: Armor
+  m_Name: Armor 2
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 3382385638194349123, guid: aebc0eb8872fe924db8f2c288eea003a, type: 3}
-  entity: {fileID: -1155006540, guid: 188fccdb608d3d6429cb81344ace9adf, type: 3}
-  characteristics: {fileID: 1315332990, guid: 09967b19c5bc3634c9d607f4c0fe49fe, type: 3}
-  id: 1
-  entitiesCount: 5
-  characteristicsCount: 12
+  characteristic: {fileID: 11400000, guid: 83473e6b53676b243aeb0e86cd5b4922, type: 2}
+  entity: {fileID: 3382385638194349123, guid: aebc0eb8872fe924db8f2c288eea003a, type: 3}
+  entityImage: {fileID: -88279874, guid: 188fccdb608d3d6429cb81344ace9adf, type: 3}
+  characteristics: {fileID: 0}
+  id: 3
+  itemQuantity: 0
+  characteristicsAmount: 0

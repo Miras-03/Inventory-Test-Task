@@ -1,3 +1,4 @@
+using Inventory;
 using Inventory.Model;
 using System;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine.UI;
 
 public sealed class CharacteristicsFilter : MonoBehaviour
 {
+    [SerializeField] private CharacteristicSO characteristic;
     [SerializeField] private InventorySO inventory;
-    [SerializeField] private int id;
 
     private void Awake() => GetComponent<Button>().onClick.AddListener(Filter);
 
@@ -14,6 +15,6 @@ public sealed class CharacteristicsFilter : MonoBehaviour
 
     private void Filter()
     {
-        Debug.Log(id);
+        inventory.entities[0].entity.gameObject.SetActive(false);
     }
 }

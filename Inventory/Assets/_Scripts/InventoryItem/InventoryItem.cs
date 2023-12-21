@@ -1,8 +1,6 @@
 using Inventory.Model;
-using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Inventory
@@ -19,27 +17,12 @@ namespace Inventory
         [SerializeField] private TextMeshProUGUI entitiesCount;
         [SerializeField] private TextMeshProUGUI characteristicsCount;
 
-        public Action<InventoryItem> OnItemLClick;
-        public Action<InventoryItem> OnItemRClick;
-        public Action<InventoryItem> OnItemDropped;
-
-        public void SetItem(ItemSO itemData, int entitiesCount)
+        public void SetItem(EntitySO itemData, CharacteristicSO characteristic, int entitiesCount)
         {
-            entity.sprite = itemData.entity;
-            characteristics.sprite = itemData.characteristics;
+            entity.sprite = itemData.entityImage;
+            characteristics.sprite = characteristic.characteristic;
             this.entitiesCount.text = $"x{entitiesCount}";
-            characteristicsCount.text = $"+{itemData.characteristicsAmount}";
+            characteristicsCount.text = $"+{characteristic.amount}";
         }
-
-        public void PoinerClick(BaseEventData eventData)
-        {
-            PointerEventData pointerData = (PointerEventData)eventData;
-            if (pointerData.button == PointerEventData.InputButton.Right)
-                OnItemRClick?.Invoke(this);
-            else
-                OnItemLClick?.Invoke(this);
-        }
-
-        public void Drop() => OnItemDropped?.Invoke(this);
     }
 }

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815d089356d9b9489f0babaca5ca620, type: 3}
   m_Name: WeaponInventory
   m_EditorClassIdentifier: 
-  items:
+  entities:
   - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
-  - {fileID: 11400000, guid: e7bbf698965397b44aa8c2eb59edc4dc, type: 2}
-  - {fileID: 11400000, guid: 75ecd402a19d6bc45ba3a8615eea6006, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
+  - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
   - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
   - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}
   - {fileID: 11400000, guid: 671b9366e4d2fd548afa4009301cf1bd, type: 2}

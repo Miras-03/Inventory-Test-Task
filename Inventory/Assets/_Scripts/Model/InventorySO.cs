@@ -6,19 +6,19 @@ namespace Inventory.Model
     [CreateAssetMenu(fileName = "Inventory", menuName = "ScriptableObject/Inventory")]
     public sealed class InventorySO : ScriptableObject
     {
-        public List<ItemSO> items;
+        public List<EntitySO> entities;
 
-        public bool isEmpty => items == null;
+        public bool isEmpty => entities == null;
 
-        public void Add(ItemSO item, int quantity)
+        public void Add(EntitySO item, int quantity)
         {
             for (int i = 0; i < quantity; i++)
-                items.Add(item);
+                entities.Add(item);
             item.itemQuantity += quantity;
         }
 
-        public void Remove(ItemSO item) => items.Remove(item);
+        public void Remove(EntitySO item) => entities.Remove(item);
 
-        public void Clear() => items.Clear();
+        public void Clear() => entities.Clear();
     }
 }
